@@ -1,0 +1,21 @@
+.body {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.cursor {
+  cursor: grab;
+}
+
+.loggedOff {
+  display: flex;
+  justify-content: flex-end;
+}

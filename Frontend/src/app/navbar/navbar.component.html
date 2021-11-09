@@ -1,0 +1,52 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light"
+  style="background-color: #bde1ee"
+>
+  <a class="navbar-brand mb-0 h1" href="/"
+    ><fa-icon [icon]="faUtensils"></fa-icon> MarseilleEat</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarText"
+    aria-controls="navbarText"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">
+          <fa-icon [icon]="faHome"></fa-icon> Accueil</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/list">
+          <fa-icon [icon]="faPizzaSlice"></fa-icon> Restaurants</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">
+          <fa-icon [icon]="faEnvelopeOpen"></fa-icon> Nous contacter</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/propos"
+          ><fa-icon [icon]="faAddressCard"></fa-icon> A propos de nous</a
+        >
+      </li>
+    </ul>
+    <span class="navbar-text"
+      ><ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/login"
+            ><fa-icon [icon]="faUserShield"></fa-icon> Administrateur</a
+          >
+        </li>
+      </ul>
+    </span>
+  </div>
+</nav>

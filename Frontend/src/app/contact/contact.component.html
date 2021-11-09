@@ -1,0 +1,60 @@
+<section class="container">
+  <br />
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Adresse email</label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        [ngModelOptions]="{ standalone: true }"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Adresse email"
+        required
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >Nous ne partagerons jamais votre adresse mail !</small
+      >
+    </div>
+    <div class="row form-group">
+      <div class="col">
+        <label for="exampleInputPassword1">Nom</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="nom"
+          [ngModelOptions]="{ standalone: true }"
+          placeholder="Nom de famille"
+          required
+        />
+      </div>
+      <div class="col">
+        <label for="exampleInputPassword1">Prénom</label>
+        <input
+          type="text"
+          [(ngModel)]="prenom"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          placeholder="Prénom"
+          required
+        />
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="validationTextarea">Message</label>
+      <textarea
+        [(ngModel)]="commentaire"
+        [ngModelOptions]="{ standalone: true }"
+        class="form-control"
+        id="validationTextarea"
+        placeholder="Saisir votre message ..."
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-info" (click)="onSubmit()">
+      Envoyer
+    </button>
+  </form>
+</section>

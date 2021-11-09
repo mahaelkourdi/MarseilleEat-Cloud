@@ -1,0 +1,22 @@
+<button type="submit" class="btn btn-info" (click)="addAvis()">
+  Ajouter un avis
+</button>
+<br />
+<br />
+<div>
+  <div *ngFor="let avi of obs | async">
+    <mat-card class="Liste avis">
+      <mat-card-title>{{ avi.user }}</mat-card-title>
+      <mat-card-subtitle
+        >{{ avi.date }} - <fa-icon [icon]="faClipboard"></fa-icon> Moyenne:
+        {{ avi.moyenne }} / 5
+      </mat-card-subtitle>
+      <mat-card-content>
+        <p>{{ avi.avis }}</p>
+      </mat-card-content>
+      <br />
+    </mat-card>
+    <br />
+  </div>
+  <mat-paginator [pageSizeOptions]="[10, 25, 50]"> </mat-paginator>
+</div>

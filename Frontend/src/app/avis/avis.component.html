@@ -1,0 +1,87 @@
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Nom et Commentaire</ng-template>
+      <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Nom" formControlName="nom" required />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="commentaire">
+        <textarea
+          matInput
+          rows="5"
+          placeholder="Commentaire"
+          formControlName="commentaire"
+          required
+        ></textarea>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <ng-template matStepLabel>Note</ng-template>
+    <mat-label>Cuisine</mat-label>
+    <br />
+    <mat-slider
+      thumbLabel
+      tickInterval="1000"
+      min="0"
+      step="0.5"
+      max="5"
+      [(ngModel)]="valueCuisine"
+    ></mat-slider>
+    <br />
+    <mat-label>Rapport</mat-label>
+    <br />
+    <mat-slider
+      thumbLabel
+      tickInterval="1000"
+      min="0"
+      step="0.5"
+      max="5"
+      [(ngModel)]="valueRapport"
+    ></mat-slider>
+
+    <br />
+    <mat-label>Service</mat-label>
+    <br />
+    <mat-slider
+      thumbLabel
+      tickInterval="1000"
+      min="0"
+      step="0.5"
+      max="5"
+      [(ngModel)]="valueService"
+    ></mat-slider>
+    <div>
+      <button mat-button matStepperPrevious>Précédent</button>
+      <button mat-button matStepperNext>Suivant</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Fin</ng-template>
+    <p>Merci, Votre avis compte pour nous.</p>
+    <div>
+      <button mat-button matStepperPrevious>Précédent</button>
+      <button type="submit" class="btn btn-info" (click)="onSubmit()">
+        Envoyer
+      </button>
+    </div>
+    <br />
+    <div
+      *ngIf="succesMessage.length != 0"
+      class="alert alert-success succesMessage"
+    >
+      {{ succesMessage }}
+    </div>
+    <div
+      *ngIf="errorMessage.length != 0"
+      class="alert alert-danger errorMessage"
+    >
+      {{ errorMessage }}
+    </div>
+  </mat-step>
+</mat-vertical-stepper>

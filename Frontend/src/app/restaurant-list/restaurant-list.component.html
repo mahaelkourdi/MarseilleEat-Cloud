@@ -1,0 +1,61 @@
+<section class="body">
+  <br />
+  <h2>Listes des restaurants !</h2>
+
+  <div class="filter">
+    <button
+      type="button"
+      class="btn btn-outline-danger"
+      (click)="geolocalisation()"
+    >
+      Récupérer la localisation
+    </button>
+
+    <mat-checkbox class="case" [(ngModel)]="checkNote" color="primary">
+      Note > = 4
+    </mat-checkbox>
+
+    <mat-form-field class="case">
+      <mat-label>Rechercher par spécialité</mat-label>
+      <input matInput type="search" [(ngModel)]="search" />
+      <button
+        mat-button
+        *ngIf="search"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="search = ''"
+      >
+        <fa-icon [icon]="faTimesCircle"></fa-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field class="case">
+      <mat-label>Rechercher par nom</mat-label>
+      <input matInput type="search" [(ngModel)]="searchName" />
+      <button
+        mat-button
+        *ngIf="searchName"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="searchName = ''"
+      >
+        <fa-icon [icon]="faTimesCircle"></fa-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="row row-cols-4">
+    <div
+      *ngFor="
+        let resto of restos
+          | FilterPipe: search
+          | filterNom: searchName
+          | filterNote: checkNote
+      "
+    >
+      <app-restaurant [data]="resto" class="col"></app-restaurant>
+    </div>
+  </div>
+</section>

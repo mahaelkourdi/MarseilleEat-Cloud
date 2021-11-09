@@ -1,0 +1,29 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <mat-card
+    class="card resto-card"
+    [routerLink]="['/detail-restau', data.idRestaurant]"
+    class="cursor"
+  >
+    <mat-card-title>{{ data.nom }}</mat-card-title>
+    <mat-card-subtitle
+      ><fa-icon [icon]="faMapMarker"></fa-icon> {{ data.adresse }} -
+      {{ data.codePostal }}</mat-card-subtitle
+    >
+
+    <img
+      mat-card-image
+      src="{{ path + data.idRestaurant + '.jpg' }}"
+      alt="image restaurant"
+    />
+
+    <mat-card-content>
+      <p>
+        <fa-icon [icon]="faCheese"></fa-icon> Spécialité : {{ data.specialite
+        }}<br />
+        <fa-icon [icon]="faClipboard"></fa-icon> Note :
+        <strong>{{ data.moyenne | number: "0.01" }}/5</strong>
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <br />
+</div>

@@ -1,0 +1,30 @@
+<div id="map"></div>
+<h2>Les restaurants les plus proche de chez vous !</h2>
+<div>
+  <div class="row row-cols-2">
+    <div *ngFor="let resto of restos" class="col">
+      <mat-card
+        mat-dialog-close
+        class="card resto-card"
+        [routerLink]="['/detail-restau', resto.idRestaurant]"
+        class="cursor"
+      >
+        <mat-card-title>{{ resto.nom }}</mat-card-title>
+        <mat-card-subtitle
+          ><fa-icon [icon]="faMapMarker"></fa-icon> {{ resto.adresse }} -
+          {{ resto.codePostal }}, à {{ resto.proximite }}m de chez
+          vous</mat-card-subtitle
+        >
+        <mat-card-content>
+          <p>
+            <fa-icon [icon]="faCheese"></fa-icon> Spécialité :
+            {{ resto.specialite }}<br />
+            <fa-icon [icon]="faClipboard"></fa-icon> Note :
+            <strong>{{ resto.moyenne | number: "0.01" }}/5</strong>
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <br />
+    </div>
+  </div>
+</div>

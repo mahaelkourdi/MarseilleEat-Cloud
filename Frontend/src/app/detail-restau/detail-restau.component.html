@@ -1,0 +1,22 @@
+<mat-card class="card resto-card">
+  <mat-card-title>{{ resto.nom }}</mat-card-title>
+  <mat-card-subtitle
+    ><fa-icon [icon]="faMapMarker"></fa-icon> {{ resto.adresse }} -
+    {{ resto.codePostal }}</mat-card-subtitle
+  >
+
+  <img
+    mat-card-image
+    src="{{ path + resto.idRestaurant + '.jpg' }}"
+    alt="image restaurant"
+  />
+
+  <mat-card-content>
+    <p>
+      <fa-icon [icon]="faCheese"></fa-icon> Spécialité : {{ resto.specialite
+      }}<br />
+      <fa-icon [icon]="faClipboard"></fa-icon> Note :
+      <strong>{{ resto.moyenne | number: "0.01" }}/5</strong>
+    </p>
+  </mat-card-content>
+</mat-card>

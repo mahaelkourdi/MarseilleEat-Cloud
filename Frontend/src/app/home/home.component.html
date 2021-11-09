@@ -1,0 +1,10 @@
+<section class="body">
+  <br />
+  <h2>Les meilleurs restaurants du moment !</h2>
+
+  <div class="row row-cols-4">
+    <div *ngFor="let resto of restos">
+      <app-restaurant [data]="resto" class="col"></app-restaurant>
+    </div>
+  </div>
+</section>

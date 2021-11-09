@@ -1,0 +1,33 @@
+<h2 class="title">Ajouter un restaurant</h2>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Nom du restaurant</mat-label>
+  <input [(ngModel)]="nom" matInput />
+</mat-form-field>
+<br />
+<mat-form-field class="example-full-width">
+  <mat-label>Adresse du restaurant</mat-label>
+  <input [(ngModel)]="adresse" matInput />
+</mat-form-field>
+<br />
+<mat-form-field class="example-full-width">
+  <mat-label>Code postal</mat-label>
+  <input [(ngModel)]="cp" matInput />
+</mat-form-field>
+<br />
+<mat-form-field class="example-full-width">
+  <mat-label>Spécialité</mat-label>
+  <input [(ngModel)]="specialite" matInput />
+</mat-form-field>
+<br />
+<mat-form-field class="example-full-width">
+  <mat-label>Latitude</mat-label>
+  <input [(ngModel)]="latitude" matInput />
+</mat-form-field>
+<br />
+<mat-form-field class="example-full-width">
+  <mat-label>Longitude</mat-label>
+  <input [(ngModel)]="longitude" matInput />
+</mat-form-field>
+<br />
+<button mat-flat-button color="primary" (click)="onSubmit()">Ajouter</button>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/../../MarseilleEat/Frontend" libraries="{MarseilleEat/Frontend/node_modules}" />
+    <file url="file://$PROJECT_DIR$/../../MarseilleEat/backend" libraries="{MarseilleEat/backend/node_modules}" />
+    <file url="file://$PROJECT_DIR$/../../MarseilleEat/backend-admin" libraries="{MarseilleEat/backend-admin/node_modules}" />
+    <file url="file://$PROJECT_DIR$/Frontend" libraries="{MarseilleEat/Frontend/node_modules}" />
+    <file url="file://$PROJECT_DIR$/backend" libraries="{MarseilleEat/backend/node_modules}" />
+    <file url="file://$PROJECT_DIR$/backend-admin" libraries="{MarseilleEat/backend-admin/node_modules}" />
+  </component>
+</project>

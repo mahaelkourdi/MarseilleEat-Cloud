@@ -1,0 +1,22 @@
+<div class="body">
+  <br />
+  <div class="row row-cols-2">
+    <div class="col">
+      <!--ICI METTRE LA CARD DU DETAIL-->
+      <app-detail-restau [resto]="resto"></app-detail-restau>
+      <br />
+      <!--ICI METTRE LA CARD DES MOYENNES-->
+      <app-note [resto]="resto"></app-note>
+      <br />
+      <!--ICI METTRE LA CARD DE LA MAP-->
+      <app-map [coord]="coord"></app-map>
+      <!--ICI METTRE LA CARD DE L'EVOL-->
+      <app-evol [evolution]="evolution"></app-evol>
+    </div>
+
+    <div class="col">
+      <!--ICI METTRE LA CARD DES AVIS-->
+      <app-avis-list [avis]="avis"></app-avis-list>
+    </div>
+  </div>
+</div>

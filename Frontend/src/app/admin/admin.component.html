@@ -1,0 +1,53 @@
+<section class="body">
+  <br />
+  <h2>Les restaurants de MarseilleEat !</h2>
+  <div class="loggedOff">
+    <button mat-flat-button color="primary" (click)="loggedOff()">
+      Déconnexion
+    </button>
+  </div>
+  <br />
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom</th>
+        <td mat-cell *matCellDef="let element">{{ element.nom }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="adresse">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Adresse</th>
+        <td mat-cell *matCellDef="let element">{{ element.adresse }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="codePostal">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Code Postal</th>
+        <td mat-cell *matCellDef="let element">{{ element.codePostal }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="specialite">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Spécialité</th>
+        <td mat-cell *matCellDef="let element">{{ element.specialite }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="idRestaurant">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+        <td mat-cell *matCellDef="let element">
+          <!--<button mat-flat-button color="primary">Modifier</button>&nbsp;-->
+          <button
+            mat-flat-button
+            color="warn"
+            (click)="deleteResto(element.idRestaurant)"
+          >
+            Supprimer
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[10, 25, 50]"> </mat-paginator>
+  </div>
+</section>

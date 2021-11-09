@@ -1,0 +1,22 @@
+<mat-card class="card resto-card">
+  <mat-card-title>Note moyenne du restaurant</mat-card-title>
+
+  <mat-card-content>
+    <div>
+      <fa-icon [icon]="faClipboard"></fa-icon> Moyenne:
+      <strong>{{ resto.moyenne | number: "0.01" }}/5</strong>
+    </div>
+    <div>
+      <fa-icon [icon]="faCookieBite"></fa-icon> Cuisine:
+      <strong>{{ resto.cuisine | number: "0.01" }}/5</strong>
+    </div>
+    <div>
+      <fa-icon [icon]="faConciergeBell"></fa-icon> Service:
+      <strong>{{ resto.service | number: "0.01" }}/5</strong>
+    </div>
+    <div>
+      <fa-icon [icon]="faEuroSign"></fa-icon> Rapport qualité/prix:
+      <strong>{{ resto.rapport | number: "0.01" }}/5</strong>
+    </div>
+  </mat-card-content>
+</mat-card>
